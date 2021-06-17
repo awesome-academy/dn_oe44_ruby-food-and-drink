@@ -49,3 +49,7 @@ config/environments/*.local.yml
 
 # Ignore uploaded test images.
 /storage
+/spec
+.rspec
+/test
+/.solargraph.yml

@@ -1,0 +1,14 @@
+vi:
+  base:
+    title: "FOOD LOVE RESTAURANT - THỨC ĂN NGON - TÂM TRẠNG TỐT"
+  home:
+    name: "Trang chủ"
+  header:
+    categories: "Danh mục"
+    contact: "Về chúng tôi"
+    cart: "Giỏ hàng"
+    account: "Tài khoản"
+  footer:
+    content: "©Bản quyền thuộc về Sun Asterisk Education"
+    english: "Tiếng Anh"
+    vietnamese: "Tiếng Việt"
