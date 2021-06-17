@@ -8,3 +8,8 @@ user:
     max_length: 255
   password:
     min_length: 6
+page:
+  paginate: 12
+image:
+  size: 5
+  format: ["image/jpeg", "image/gif", "image/png"]

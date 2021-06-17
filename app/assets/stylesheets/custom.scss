@@ -36,8 +36,12 @@
   text-align: center;
   .image{
     display: block;
-    height: 250px;
-    width: 260px;
+    height: 80px;
+    width: 130px;
+    .food{
+      height: 80px;
+      width: 130px;
+    }
   }
   .content .title :hover{
     text-decoration: none;
@@ -59,4 +63,8 @@
       height: 16px;
     }
   }
+}
+/* Home*/
+.text-center {
+  text-align: center;
 }

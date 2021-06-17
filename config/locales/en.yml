@@ -3,6 +3,8 @@ en:
     title: "FOOD LOVE RESTAURANT - GOOD FOOD IS GOOD MOOD"
   home:
     name: "Home page"
+    products: "PRODUCTS"
+    products_not_have: "Products not be displayed"
   header:
     categories: "Category"
     contact: "About Us"
@@ -12,3 +14,6 @@ en:
     content: "©Copyright by Sun Asterisk Education - All rights reserved"
     english: "English"
     vietnamese: "Vietnamese"
+  image:
+    format: "Format of image is invalid"
+    size: "Image more than size"
