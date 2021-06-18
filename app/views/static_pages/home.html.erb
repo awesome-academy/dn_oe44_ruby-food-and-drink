@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% provide :title, t("home.name") %>
+  <% provide :base_title, t("base.title") %>
+</head>
+<body>
+  <div class="container">
+    <%= render "static_pages/banner" %>
+    <hr>
+    <%= render "static_pages/product_items" %>
+  </div>
+</body>
+</html>
