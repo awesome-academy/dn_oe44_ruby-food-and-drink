@@ -1,7 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-@import "/home/chucht96/Desktop/dn_oe44_ruby-food-and-drink/app/assets/stylesheets/color.scss";
+@import "color.scss";
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -67,4 +67,18 @@
 /* Home*/
 .text-center {
   text-align: center;
+}
+/* Errors*/
+#error_explanation {
+  color: $state-danger;
+  ul {
+    color: $state-danger;
+    margin: 0 0 30px;
+  }
+}
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger;
+  }
 }
