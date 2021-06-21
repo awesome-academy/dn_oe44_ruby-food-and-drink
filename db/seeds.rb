@@ -1,3 +1,34 @@
+# Users
+User.create!(
+  name: "Huynh Thanh Chuc",
+  email: "thanhchuc.cnttk38@gmail.com",
+  address: "Đà Nẵng",
+  phone: "0924261996",
+  role: 1,
+  password: "123456",
+  password_confirmation: "123456"
+)
+
+10.times do |n|
+  User.create!(
+    name: Faker::Name.name,
+    email: "example#{n+1}@gmail.com",
+    password: "123456",
+    password_confirmation: "123456",
+    address: Faker::Address.full_address,
+    phone: Faker::PhoneNumber.phone_number,
+    role: 0)
+  end
+
+users = User.all
+users.each do |user|
+  user.images.attach(
+    io: File.open('/home/chucht96/Desktop/dn_oe44_ruby-food-and-drink/app/assets/images/user.png'),
+    filename: 'user.png'
+  )
+end
+
+
 # Categories
 Category.create!(name: "Foods")
 Category.create!(name: "Drinks")
@@ -15,7 +46,6 @@ categories.each do |category|
   end
 end
 
-# Images
 products = Product.all
 products.each do |product|
   product.images.attach(

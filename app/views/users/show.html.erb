@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% provide(:title, @user.name)%>
+  <% provide(:base_title, t("base.title")) %>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 text-center">
+        <h1><%= @user.name %></h1>
+        <%= user_image @user %>
+        <input type="file" class="text-center center-block well well-sm">
+      </div>
+      <div class="col-sm-8">
+        <div class="well">
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#infor" data-toggle="tab"><%= t "base.information" %></a></li>
+            <li><a href="#contact" data-toggle="tab"><%= t "base.contact" %></a></li>
+          </ul>
+          <div id="myTabContent" class="tab-content">
+            <div class="tab-pane active in" id="infor">
+              <br>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title"><%= t "user.basic" %></h4>
+                </div>
+                <div class="panel-body">
+                  <table class="table profile__table">
+                    <tbody>
+                      <tr>
+                        <th><strong><%= t "user.name" %></strong></th>
+                        <td><%= @user.name %></td>
+                      </tr>
+                      <tr>
+                        <th><strong><%= t "user.address" %></strong></th>
+                        <td><%= @user.address %></td>
+                      </tr>
+                      <tr>
+                        <th><strong><%= t "user.role" %></strong></th>
+                        <td><%= @user.role %></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="contact">
+              <br>
+              <div id="tab2">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title"><%= t "user.my_contacts" %></h4>
+                  </div>
+                  <div class="panel-body">
+                    <table class="table profile__table">
+                      <tbody>
+                        <tr>
+                          <th><strong><%= t "user.email" %></strong></th>
+                          <td><%= @user.email %></td>
+                        </tr>
+                        <tr>
+                          <th><strong><%= t "user.phone" %></strong></th>
+                          <td><%= @user.phone %></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

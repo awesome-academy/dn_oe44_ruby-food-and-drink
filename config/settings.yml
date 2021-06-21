@@ -9,7 +9,7 @@ user:
   password:
     min_length: 6
 page:
-  paginate: 12
+  paginate: 8
 image:
   size: 5
   format: ["image/jpeg", "image/gif", "image/png"]
