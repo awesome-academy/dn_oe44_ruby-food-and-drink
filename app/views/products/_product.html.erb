@@ -1,0 +1,17 @@
+<div class="col-md-3 col-sm-6">
+  <div class="product">
+      <div class="image">
+          <a href="#">
+            <%= product_image product %>
+          </a>
+      </div>
+      <div class="content">
+          <h3 class="title"><a href="#"><%= product.name %></a></h3>
+          <div class="price"><%= number_to_currency product.price %></div>
+      </div>
+      <ul class="button">
+          <li><a href="" data-tip="Quick view"><i class="fa fa-search"></i></a></li>
+          <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+      </ul>
+  </div>
+</div>

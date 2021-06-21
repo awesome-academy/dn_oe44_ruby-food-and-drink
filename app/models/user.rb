@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :images, dependent: :destroy
+  has_one_attached :image
   has_many :rates, dependent: :destroy
 
   before_save :downcase_email

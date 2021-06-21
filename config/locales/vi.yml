@@ -3,6 +3,8 @@ vi:
     title: "FOOD LOVE RESTAURANT - THỨC ĂN NGON - TÂM TRẠNG TỐT"
   home:
     name: "Trang chủ"
+    products: "DANH SÁCH SẢN PHẨM"
+    products_not_have: "Không có sản phẩm nào để hiển thị"
   header:
     categories: "Danh mục"
     contact: "Về chúng tôi"
@@ -12,3 +14,6 @@ vi:
     content: "©Bản quyền thuộc về Sun Asterisk Education"
     english: "Tiếng Anh"
     vietnamese: "Tiếng Việt"
+  image:
+    format: "Định dạng ảnh không hợp lệ"
+    size: "Dung lượng ảnh quá lớn, vui lòng chọn ảnh khác"

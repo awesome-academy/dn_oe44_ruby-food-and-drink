@@ -5,10 +5,16 @@
   <% provide :base_title, t("base.title") %>
 </head>
 <body>
-  <div class="container">
-    <%= render "static_pages/banner" %>
-    <hr>
-    <%= render "static_pages/product_items" %>
+  <div class="container text-center">
+    <div class="row">
+      <%= render "static_pages/banner" %>
+      <hr>
+      <h3><%= t ".products" %></h3>
+      <hr>
+      <%= render @products || t("home.products_not_have") %>
+    </div>
+    <div class="row center">
+      <%= will_paginate @products %>
+    </div>
   </div>
-</body>
 </html>
