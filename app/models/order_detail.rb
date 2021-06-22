@@ -11,7 +11,7 @@ class OrderDetail < ApplicationRecord
   validate :product_present
   validate :order_present
 
-  delegate :name, to: :product, prefix: true
+  delegate :name, :quantity, to: :product, prefix: true
 
   before_save :finalize
 
