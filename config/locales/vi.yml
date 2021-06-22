@@ -73,3 +73,4 @@ vi:
       product_invalid: "Số lượng không hợp lệ"
       add_success: "Thêm vào giỏ hàng thành công."
       delete_success: "Xóa khỏi giỏ hàng thành công"
+      delete_fail: "Xoá không thành công"
