@@ -22,7 +22,7 @@ User.create!(
 
 users = User.all
 users.each do |user|
-  user.images.attach(
+  user.image.attach(
     io: File.open('/home/chucht96/Desktop/dn_oe44_ruby-food-and-drink/app/assets/images/user.png'),
     filename: 'user.png'
   )
@@ -37,7 +37,7 @@ Category.create!(name: "Drinks")
 categories = Category.all
 categories.each do |category|
   10.times do |n|
-    Product.create!(
+    category.products.create!(
       name: category.name + " #{n+1}",
       infor: Faker::Lorem.paragraph,
       quantity: Faker::Number.non_zero_digit,
@@ -51,5 +51,24 @@ products.each do |product|
   product.images.attach(
     io: File.open('/home/chucht96/Desktop/dn_oe44_ruby-food-and-drink/app/assets/images/food.jpeg'),
     filename: 'food.jpeg'
+  )
+end
+
+# Orders
+10.times do |n|
+  Order.create!(
+    user_id: User.limit(3).pluck(:id).sample,
+    status: Order.statuses.values.sample,
+    total: 1000
+  )
+end
+
+#Order Details
+20.times do |n|
+  OrderDetail.create!(
+    order_id: Order.pluck(:id).sample,
+    product_id: Product.pluck(:id).sample,
+    current_price: Faker::Number.decimal(l_digits: 2),
+    quantity: rand(1..10)
   )
 end

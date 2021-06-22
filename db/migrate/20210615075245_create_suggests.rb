@@ -4,6 +4,7 @@ class CreateSuggests < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :infor
       t.integer :status
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

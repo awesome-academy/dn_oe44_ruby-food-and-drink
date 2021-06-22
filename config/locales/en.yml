@@ -1,4 +1,20 @@
 en:
+  errors:
+    messages:
+      accepted: "must be accepted"
+      blank: "can't be blank"
+      confirmation: "doesn't match %{attribute}"
+      greater_than: "must be greater than %{count}"
+      invalid: "is invalid"
+      not_a_number: "is not a number"
+      not_an_integer: "must be an integer"
+      too_long: "is too long (maximum is %{count} characters)"
+      too_short: "is too short (minimum is %{count} characters)"
+      wrong_length: "is the wrong length (should be %{count} characters)"
+      required: "must exist"
+      taken: "has already been taken"
+      product_nil: "is not a valid product."
+      order_nil: "is not a valid order."
   base:
     title: "FOOD LOVE RESTAURANT - GOOD FOOD IS GOOD MOOD"
   home:
@@ -36,3 +52,24 @@ en:
     role: "Role"
     my_contacts: "My contacts"
     phone: "Phone"
+  cart:
+    order_details_nil: "There's no order detail to be displayed"
+    product: "Product"
+    quantity: "Quantity"
+    price: "Price"
+    subtotal: "Subtotal"
+    total: "Total"
+    action: "Action"
+    continue: "Continue Shopping"
+    checkout: "Checkout"
+    image: "Image"
+    in_stock: "In stock"
+    remove: "Remove"
+    verify: "Do you want remove this product?"
+    content: "%{quantity} product"
+  controllers:
+    carts:
+      product_empty: "Not found this product."
+      quantity_invalid: "Quantity error"
+      add_success: "Add to cart success."
+      delete_success: "Delete success"

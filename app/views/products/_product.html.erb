@@ -9,9 +9,17 @@
           <h3 class="title"><a href="#"><%= product.name %></a></h3>
           <div class="price"><%= number_to_currency product.price %></div>
       </div>
-      <ul class="button">
+      <ul class="action">
           <li><a href="" data-tip="Quick view"><i class="fa fa-search"></i></a></li>
-          <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+          <li>
+            <%= form_tag(carts_path, method: :post) do %>
+              <%= hidden_field_tag(:product_id, product.id) %>
+              <%= hidden_field_tag(:quantity, 1) %>
+              <%= button_tag(type: "submit", class: "btn btn-danger") do %>
+                <i class="fa fa-shopping-cart" ><%= t "home.cart" %></i>
+              <% end %>
+            <% end %>
+          </li>
       </ul>
   </div>
 </div>

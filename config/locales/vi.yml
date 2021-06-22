@@ -1,4 +1,20 @@
 vi:
+  errors:
+    messages:
+      accepted: "phải được đồng ý"
+      blank: "không thể để trắng"
+      confirmation: "không khớp với xác nhận %{attribute}"
+      greater_than: "phải lớn hơn %{count}"
+      invalid: "không hợp lệ"
+      not_a_number: "không phải là số"
+      not_an_integer: "phải là một số nguyên"
+      too_long: "quá dài (tối đa %{count} ký tự)"
+      too_short: "quá ngắn (tối thiểu %{count} ký tự)"
+      wrong_length: "độ dài không đúng (phải là %{count} ký tự)"
+      required: "phải có"
+      taken: "đã tồn tại"
+      product_nil: "không phải là một sản phẩm hợp lệ."
+      order_nil: "không phải là một đơn đặt hàng hợp lệ."
   base:
     title: "FOOD LOVE RESTAURANT - THỨC ĂN NGON - TÂM TRẠNG TỐT"
   home:
@@ -36,3 +52,24 @@ vi:
     role: "Vai trò"
     my_contacts: "Liên hệ của tôi"
     phone: "Số điện thoại"
+  cart:
+    order_details_empty: "Không có đơn hàng nào để hiển thị"
+    product: "Sản phẩm"
+    quantity: "Số lượng"
+    price: "Giá"
+    subtotal: "Tổng"
+    total: "TỔNG CỘNG"
+    action: "Thao tác"
+    continue: "Tiếp tục mua sắm"
+    checkout: "Thanh toán"
+    image: "Hình ảnh"
+    in_stock: "Trong kho còn"
+    remove: "Xóa"
+    verify: "Bạn muốn xóa sản phẩm này khỏi giỏ hàng ?"
+    content: "%{quantity} sản phẩm"
+  controllers:
+    carts:
+      product_empty: "Không tìm thấy sản phẩm này."
+      product_invalid: "Số lượng không hợp lệ"
+      add_success: "Thêm vào giỏ hàng thành công."
+      delete_success: "Xóa khỏi giỏ hàng thành công"

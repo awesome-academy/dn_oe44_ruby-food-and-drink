@@ -5,9 +5,9 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user&.authenticate(params[:session][:password])
       log_in user
-      redirect_to user
+      redirect_back_or user
     else
-      flash[:danger] = t "user.login_fail"
+      flash.now[:danger] = t "user.login_fail"
       render :new
     end
   end
