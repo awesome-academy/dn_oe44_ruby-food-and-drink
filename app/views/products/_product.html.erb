@@ -1,16 +1,18 @@
-<div class="col-md-3 col-sm-6">
+<div class="col-md-3 col-sm-6 grid">
   <div class="product">
       <div class="image">
-          <a href="#">
-            <%= product_image product %>
-          </a>
+        <%= product_image product %>
       </div>
       <div class="content">
           <h3 class="title"><a href="#"><%= product.name %></a></h3>
           <div class="price"><%= number_to_currency product.price %></div>
       </div>
       <ul class="action">
-          <li><a href="" data-tip="Quick view"><i class="fa fa-search"></i></a></li>
+          <li>
+            <%= link_to product, class: "btn btn-primary" do %>
+              <%= t "home.view" %>
+            <% end %>
+          </li>
           <li>
             <%= form_tag(carts_path, method: :post) do %>
               <%= hidden_field_tag(:product_id, product.id) %>

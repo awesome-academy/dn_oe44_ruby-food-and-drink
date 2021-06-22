@@ -1,42 +1,53 @@
-<div class="container" id="shopping">
-  <%= render "shared/error_messages", object: @order_detail %>
-  <table class="table table-hover">
-    <thead class="font-size" >
-      <tr>
-        <th class="text-center"><%= t "cart.image" %></th>
-        <th><%= t "cart.product" %></th>
-        <th class="text-center"><%= t "cart.quantity" %></th>
-        <th class="text-center"><%= t "cart.price" %></th>
-        <th class="text-center"><%= t "cart.subtotal" %></th>
-        <th class="text-center"><%= t "cart.action" %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render(partial: "carts/cart_row", collection: @order_details, as: :order_detail) || t("cart.order_details_empty") %>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td colspan="5" class="text-right">
-          <h3><strong><%= t "cart.total" %></strong></h3>
-        </td>
-        <td class="text-right">
-          <h3><strong><%= number_to_currency @total %></strong></h3>
-        </td>
-      </tr>
-      <tr class="font-size">
-        <td colspan="5" class="text-right">
-          <%= link_to root_path, class: "btn btn-default" do %>
-            <span class="glyphicon glyphicon-shopping-cart"></span>
-            <strong><%= t("cart.continue") %></strong>
-          <% end %>
-        </td>
-        <td class="text-right">
-          <%= link_to "#", class: "btn btn-success" do %>
-            <span class="glyphicon glyphicon-play"></span>
-            <strong><%= t("cart.checkout") %></strong>
-          <% end %>
-        </td>
-      </tr>
-    </tfoot>
-  </table>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+  <% provide :title, t("cart.name") %>
+  <% provide :base_title, t("base.title") %>
+</head>
+<body>
+  <div class="container">
+    <%= render "shared/error_messages", object: @order_detail %>
+    <table class="table table-hover">
+      <thead class="font-size" >
+        <tr>
+          <th class="text-center"><%= t "cart.image" %></th>
+          <th><%= t "cart.product" %></th>
+          <th class="text-center"><%= t "cart.quantity" %></th>
+          <th class="text-center"><%= t "cart.price" %></th>
+          <th class="text-center"><%= t "cart.subtotal" %></th>
+          <th class="text-center"><%= t "cart.action" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <h3 class="text-center" style="color: red">
+          <%= render(partial: "cart_row", collection: @order_details, as: "order_detail") || t("cart.order_details_empty") %>
+        </h3>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="5" class="text-right">
+            <h3><strong><%= t "cart.total" %></strong></h3>
+          </td>
+          <td class="text-right">
+            <h3><strong><%= number_to_currency @total %></strong></h3>
+          </td>
+        </tr>
+        <tr class="font-size">
+          <td colspan="5" class="text-right">
+            <%= link_to root_path, class: "btn btn-default" do %>
+              <span class="glyphicon glyphicon-shopping-cart"></span>
+              <strong><%= t("cart.continue") %></strong>
+            <% end %>
+          </td>
+          <td class="text-right">
+            <%= link_to "#", class: "btn btn-success" do %>
+              <span class="glyphicon glyphicon-play"></span>
+              <strong><%= t("cart.checkout") %></strong>
+            <% end %>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</body>
+</html>

@@ -17,12 +17,18 @@ en:
       order_nil: "is not a valid order."
   base:
     title: "FOOD LOVE RESTAURANT - GOOD FOOD IS GOOD MOOD"
+    information: "Information"
+    contact: "Contact"
+    error: "error"
   home:
     name: "Home page"
     products: "PRODUCTS"
     products_not_have: "Products not be displayed"
+    cart: "CART"
+    view: "VIEW"
   header:
-    categories: "Category"
+    cate: "FOODS"
+    cate: "DRINKS"
     contact: "About Us"
     cart: "Shopping Cart"
     account: "Account"
@@ -53,6 +59,7 @@ en:
     my_contacts: "My contacts"
     phone: "Phone"
   cart:
+    name: "Cart"
     order_details_empty: "There's no order detail to be displayed"
     product: "Product"
     quantity: "Quantity"
@@ -67,6 +74,11 @@ en:
     remove: "Remove"
     verify: "Do you want remove this product?"
     content: "%{quantity} product"
+  product:
+    name: "%{product}"
+    detail: "PRODUCT DETAIL"
+    descipt: "Description product"
+    detail_info: "Detail"
   controllers:
     carts:
       product_empty: "Not found this product."
