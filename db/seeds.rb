@@ -49,8 +49,8 @@ end
 products = Product.all
 products.each do |product|
   product.images.attach(
-    io: File.open('/home/chucht96/Desktop/dn_oe44_ruby-food-and-drink/app/assets/images/food.jpeg'),
-    filename: 'food.jpeg'
+    io: File.open('/home/chucht96/Desktop/dn_oe44_ruby-food-and-drink/app/assets/images/food.jpg'),
+    filename: 'food.jpg'
   )
 end
 
