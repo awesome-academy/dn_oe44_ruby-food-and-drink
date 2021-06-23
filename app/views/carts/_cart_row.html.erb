@@ -1,0 +1,38 @@
+<tr class="font-size" >
+  <div class="media">
+    <td class="col-md-1">
+      <%= product_image @product %>
+    </td>
+    <td class="col-md-5">
+      <div class="media-body">
+        <h4 class="media-heading">
+          <%= link_to order_detail.product_name, "#" %>
+        </h4>
+        <h5 class="media-heading">
+          <%= link_to order_detail.product.category_name, "#" %>
+        </h5>
+        <span><%= t "cart.in_stock" %></span>
+        <span class="text-warning">
+          <strong><%= t("cart.content", quantity: order_detail.product.quantity) %></strong>
+        </span>
+      </div>
+    </td>
+  </div>
+  <td class="col-md-2" style="text-align: center">
+    <strong><%= order_detail.quantity.to_i %></strong>
+  </td>
+  <td class="col-md-1 text-center">
+    <strong><%= number_to_currency order_detail.current_price %></strong>
+  </td>
+  <td class="col-md-1 text-center">
+    <strong>
+      <%= number_to_currency (total order_detail.current_price, order_detail.quantity) %>
+    </strong>
+  </td>
+  <td class="col-md-2 text-center">
+    <%= link_to carts_path(id: order_detail.product.id), {data: {confirm: t("cart.verify")}, class: "btn btn-danger", method: :delete} do %>
+    <span class="glyphicon glyphicon-remove"></span>
+    <strong><%= t("cart.remove") %></strong>
+    <% end %>
+  </td>
+</tr>

@@ -13,5 +13,8 @@ class Product < ApplicationRecord
   validates :quantity, presence: true,
     numericality: {only_integer: true,
                    greater_than: Settings.number.greater_than}
+
+  delegate :name, to: :category, prefix: true
+
   scope :order_by_name_asc, ->{order :name}
 end
