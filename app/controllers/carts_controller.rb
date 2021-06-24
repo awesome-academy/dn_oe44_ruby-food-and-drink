@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
-  before_action :load_product, :check_quantity, :check_cart, only: [:create]
+  before_action :load_product, :check_quantity, :check_cart,
+                only: [:create, :update]
 
   def show
     cart = current_cart
@@ -18,6 +19,14 @@ class CartsController < ApplicationController
       end
     end
     flash[:danger] = t "controllers.carts.product_empty" if flag
+  end
+
+  def update
+    cart = current_cart
+    cart[params[:product_id]] = params[:quantity].to_i
+    flash[:success] = t "controllers.carts.update_success"
+    session[:cart] = cart
+    redirect_to carts_path
   end
 
   def create

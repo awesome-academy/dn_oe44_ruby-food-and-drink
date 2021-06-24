@@ -13,11 +13,20 @@
         </h5>
         <span><%= t "cart.in_stock" %></span>
         <span class="text-warning">
-          <strong><%= t("cart.content", quantity: order_detail.product.quantity) %></strong>
+          <strong><%= t("cart.content", quantity: order_detail.product_quantity) %></strong>
         </span>
       </div>
     </td>
   </div>
+  <td class="col-md-2 form-inline">
+    <%= form_tag(carts_path, method: :patch) do %>
+      <%= number_field_tag(:quantity, order_detail.quantity.to_i, min: 1, max: order_detail.product_quantity, class: "form-control") %>
+      <%= hidden_field_tag(:product_id, order_detail.product.id) %>
+      <%= button_tag(type: "submit", data: {confirm: t("cart.update")}, class: "btn btn-success save") do %>
+        <i class="fa fa-save"></i>
+      <% end %>
+    <% end %>
+  </td>
   <td class="col-md-2" style="text-align: center">
     <strong><%= order_detail.quantity.to_i %></strong>
   </td>

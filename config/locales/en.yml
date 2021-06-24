@@ -74,6 +74,7 @@ en:
     remove: "Remove"
     verify: "Do you want remove this product?"
     content: "%{quantity} product"
+    update: "Do you want update this product?"
   product:
     name: "%{product}"
     detail: "PRODUCT DETAIL"
@@ -86,3 +87,5 @@ en:
       add_success: "Add to cart success."
       delete_success: "Delete success"
       delete_fail: "Delete fail"
+      update_success: "Update success"
+      update_fail: "Update fail"

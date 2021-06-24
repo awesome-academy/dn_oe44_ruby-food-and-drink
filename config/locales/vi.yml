@@ -74,6 +74,8 @@ vi:
     remove: "Xóa"
     verify: "Bạn muốn xóa sản phẩm này khỏi giỏ hàng ?"
     content: "%{quantity} sản phẩm"
+    update: "Bạn có muốn cập nhật sản phẩm này?"
+
   product:
       name: "%{product}"
       detail: "CHI TIẾT SẢN PHẨM"
@@ -86,3 +88,5 @@ vi:
       add_success: "Thêm vào giỏ hàng thành công."
       delete_success: "Xóa khỏi giỏ hàng thành công"
       delete_fail: "Xoá không thành công"
+      update_success: "Cập nhật giỏ hàng thành công"
+      update_fail: "Cập nhật giỏ hàng thất bại"
