@@ -17,12 +17,18 @@ vi:
       order_nil: "không phải là một đơn đặt hàng hợp lệ."
   base:
     title: "FOOD LOVE RESTAURANT - THỨC ĂN NGON - TÂM TRẠNG TỐT"
+    information: "Thông tin"
+    contact: "Liên hệ"
+    error: "lỗi"
   home:
     name: "Trang chủ"
     products: "DANH SÁCH SẢN PHẨM"
     products_not_have: "Không có sản phẩm nào để hiển thị"
+    cart: "Thêm vào giỏ"
+    view: "Hiển thị thông tin"
   header:
-    categories: "Danh mục"
+    cate: "ĐỒ ĂN"
+    cate: "THỨC UỐNG"
     contact: "Về chúng tôi"
     cart: "Giỏ hàng"
     account: "Tài khoản"
@@ -53,6 +59,7 @@ vi:
     my_contacts: "Liên hệ của tôi"
     phone: "Số điện thoại"
   cart:
+    name: "Giỏ hàng"
     order_details_empty: "Không có đơn hàng nào để hiển thị"
     product: "Sản phẩm"
     quantity: "Số lượng"
@@ -67,6 +74,11 @@ vi:
     remove: "Xóa"
     verify: "Bạn muốn xóa sản phẩm này khỏi giỏ hàng ?"
     content: "%{quantity} sản phẩm"
+  product:
+      name: "%{product}"
+      detail: "CHI TIẾT SẢN PHẨM"
+      descipt: "Mô tả sản phẩm"
+      detail_info: "Chi tiết"
   controllers:
     carts:
       product_empty: "Không tìm thấy sản phẩm này."

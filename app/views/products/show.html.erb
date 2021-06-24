@@ -1,0 +1,90 @@
+<% provide :title, t("product.name", product: @product.name) %>
+<% provide :base_title, t("base.title") %>
+<div class="container">
+  <div class="row">
+    <h2 class="text-center"><%= t "product.detail" %></h2>
+    <hr>
+    <div class="col-md-6 item-photo">
+      <%= product_image @product %>
+    </div>
+    <div class="col-md-6 info">
+      <h2>
+        <%= @product.name %> - <%= link_to @product.category.name, "#" %>
+      </h2>
+      <h2 style="color:red">
+        <em><%= number_to_currency @product.price %></em>
+      </h2>
+      <br>
+      <div>
+        <%= form_tag(carts_path, method: :post) do |f| %>
+          <h4><%= t "cart.quantity" %></h4>
+          <%= number_field_tag(:quantity, {}, min: 1, max: @product.quantity, class: "form-control") %>
+          <%= hidden_field_tag(:product_id, @product.id) %>
+          <%= button_tag(type: "submit", class: "btn btn-danger button") do %>
+            <i class="fa fa-shopping-cart"> <%= t "cart.add" %></i>
+          <% end %>
+        <% end %>
+      </div>
+      <br>
+      <div class="well">
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <a href="#infor" data-toggle="tab"><%= t "base.information" %></a>
+          </li>
+          <li>
+            <a href="#stock" data-toggle="tab"><%= t "cart.quantity" %></a>
+          </li>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+          <div class="tab-pane active in" id="infor">
+            <br>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <%= t "product.descipt" %>
+                </h4>
+              </div>
+              <div class="panel-body">
+                <table class="table profile__table">
+                  <tbody>
+                    <tr>
+                      <th>
+                        <strong><%= t "product.detail_info" %></strong>
+                      </th>
+                      <td><%= @product.infor %></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="stock">
+            <br>
+            <div id="tab2">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <%= t "cart.quantity" %>
+                  </h4>
+                </div>
+                <div class="panel-body">
+                  <table class="table profile__table">
+                    <tbody>
+                      <tr>
+                        <th>
+                          <strong><%= t "cart.in_stock" %></strong>
+                        </th>
+                        <td><%= t("cart.content", quantity: @product.quantity) %>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
