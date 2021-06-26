@@ -16,7 +16,7 @@ User.create!(
     password: "123456",
     password_confirmation: "123456",
     address: Faker::Address.full_address,
-    phone: Faker::PhoneNumber.phone_number,
+    phone: Faker::Number.leading_zero_number(digits: 10),
     role: 0)
   end
 

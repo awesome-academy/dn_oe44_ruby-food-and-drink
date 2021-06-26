@@ -1,0 +1,22 @@
+<%= form_for(@order) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="form-row">
+    <div class="col-md-3">
+      <%= f.label :name , t("user.name") %>
+      <%= f.text_field :name, class: "form-control", value: current_user.name %>
+    </div>
+    <div class="col-md-3">
+      <%= f.label :email, t("user.email") %>
+      <%= f.email_field :email, class: "form-control", value: current_user.email %>
+    </div>
+    <div class="col-md-3">
+      <%= f.label :phone, t("user.phone") %>
+      <%= f.telephone_field :phone, class: "form-control", value: current_user.phone %>
+    </div>
+    <div class="col-md-3">
+      <%= f.label :address, t("user.address") %>
+      <%= f.text_field :address, class: "form-control", value: current_user.address %>
+    </div>
+  </div>
+  <%= f.submit yield(:button_text), class: "btn btn-success button" %>
+<% end %>

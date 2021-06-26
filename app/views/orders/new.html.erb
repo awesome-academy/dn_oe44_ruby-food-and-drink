@@ -1,0 +1,36 @@
+<% provide(:title, t("order.name")) %>
+<% provide(:base_title, t("base.title")) %>
+<% provide :button_text, t("cart.checkout") %>
+<div class="container">
+  <h1 class="text-center"><%= t "order.your_order" %></h1>
+  <hr>
+  <div>
+    <%= render "infor" %>
+  </div>
+  <table id="orders" class="table table-hover">
+    <thead class="font-size" >
+      <tr>
+        <th><%= t "cart.product" %></th>
+        <th class="text-center"><%= t "cart.quantity" %></th>
+        <th class="text-center"><%= t "cart.price" %></th>
+        <th class="text-center"><%= t "cart.subtotal" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <h3 class="text-center" style="color: red">
+        <%= render partial: "orders/order_row", collection: @order.order_details, as: :order_details %>
+      </h3>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3" class="text-right">
+          <h3><strong><%= t "cart.total" %></strong></h3>
+        </td>
+        <td class="text-center">
+          <h3><strong><%= number_to_currency @order.total_price %></strong></h3>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+  <hr>
+</div>

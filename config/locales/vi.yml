@@ -75,12 +75,18 @@ vi:
     verify: "Bạn muốn xóa sản phẩm này khỏi giỏ hàng ?"
     content: "%{quantity} sản phẩm"
     update: "Bạn có muốn cập nhật sản phẩm này?"
-
+    empty: "Không có đơn hàng để thanh toán"
   product:
-      name: "%{product}"
-      detail: "CHI TIẾT SẢN PHẨM"
-      descipt: "Mô tả sản phẩm"
-      detail_info: "Chi tiết"
+    name: "%{product}"
+    detail: "CHI TIẾT SẢN PHẨM"
+    descipt: "Mô tả sản phẩm"
+    detail_info: "Chi tiết"
+  order:
+    your_order: "Đơn hàng của bạn"
+    status: "Trạng thái đơn hàng"
+    total: "Tổng tiền"
+    date: "Ngày đặt hàng"
+    note: "Cám ơn bạn đã chọn nhà hàng của chúng tôi"
   controllers:
     carts:
       product_empty: "Không tìm thấy sản phẩm này."
@@ -88,5 +94,15 @@ vi:
       add_success: "Thêm vào giỏ hàng thành công."
       delete_success: "Xóa khỏi giỏ hàng thành công"
       delete_fail: "Xoá không thành công"
+      update_success: "Cập nhật giỏ hàng thành công"
+      update_fail: "Cập nhật giỏ hàng thất bại"
+      update_success: "Cập nhật giỏ hàng thành công"
+      update_fail: "Cập nhật giỏ hàng thất bại"
+    orders:
+      save_success: "Lưu giỏ hàng thành công"
+      save_fail: "Lưu giỏ hàng thất bại"
+      must_login: "Vui lòng đăng nhập trước khi thực hiện hành động này"
+      empty: "Giỏ hàng trống"
+      not_found: "Không tìm thấy giỏ hàng"
       update_success: "Cập nhật giỏ hàng thành công"
       update_fail: "Cập nhật giỏ hàng thất bại"

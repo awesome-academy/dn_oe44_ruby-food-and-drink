@@ -1,0 +1,25 @@
+<tr class="font-size" >
+  <div class="media">
+    <td class="col-md-3">
+      <div class="media-body">
+        <h4 class="media-heading">
+          <%= link_to order_details.product_name, order_details.product %>
+        </h4>
+        <h5 class="media-heading">
+          <%= link_to order_details.product.category_name, "#" %>
+        </h5>
+      </div>
+    </td>
+  </div>
+  <td class="col-md-3 text-center">
+    <strong><%= order_details.quantity %></strong>
+  </td>
+  <td class="col-md-3 text-center">
+    <strong><%= number_to_currency order_details.current_price %></strong>
+  </td>
+  <td class="col-md-3 text-center">
+    <strong>
+      <%= number_to_currency order_details.total %>
+    </strong>
+  </td>
+</tr>

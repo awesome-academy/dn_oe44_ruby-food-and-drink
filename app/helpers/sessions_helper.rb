@@ -24,6 +24,20 @@ module SessionsHelper
     price * quantity
   end
 
+  def load_order_details_from_cart
+    cart = current_cart
+    @total = 0
+    @order_details = []
+    cart.each do |key, value|
+      @product = Product.find_by id: key.to_i
+      next unless @product
+
+      @order_details << OrderDetail.new(product: @product, quantity: value,
+        current_price: @product.price)
+      @total += @product.price * value
+    end
+  end
+
   def redirect_back_or default
     redirect_to(session[:forwarding_url] || default)
     session.delete(:forwarding_url)

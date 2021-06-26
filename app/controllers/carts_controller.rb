@@ -1,25 +1,9 @@
 class CartsController < ApplicationController
   before_action :load_product, :check_quantity, :check_cart,
                 only: [:create, :update]
+  before_action :load_order_details_from_cart, only: :show
 
-  def show
-    cart = current_cart
-    @total = 0
-    flag = false
-    @order_details = []
-    cart.each do |key, value|
-      @product = Product.find_by id: key
-      if @product
-        @order_details << OrderDetail.new(product: @product, quantity: value,
-          current_price: @product.price)
-        @total += value * @product.price
-      else
-        cart.delete(key)
-        flag = true
-      end
-    end
-    flash[:danger] = t "controllers.carts.product_empty" if flag
-  end
+  def show; end
 
   def update
     cart = current_cart

@@ -75,11 +75,18 @@ en:
     verify: "Do you want remove this product?"
     content: "%{quantity} product"
     update: "Do you want update this product?"
+    empty: "No orders to check out"
   product:
     name: "%{product}"
     detail: "PRODUCT DETAIL"
     descipt: "Description product"
     detail_info: "Detail"
+  order:
+    your_order: "Your order"
+    status: "Order status"
+    total: "Total"
+    date: "Order date"
+    note: "Thank you for choosing our restaurant"
   controllers:
     carts:
       product_empty: "Not found this product."
@@ -87,5 +94,15 @@ en:
       add_success: "Add to cart success."
       delete_success: "Delete success"
       delete_fail: "Delete fail"
+      update_success: "Update success"
+      update_fail: "Update fail"
+      update_success: "Update success"
+      update_fail: "Update fail"
+    orders:
+      save_success: "Save the orders success"
+      save_fail: "Save the orders fail"
+      must_login: "Please login before do this action"
+      empty: "Order is empty"
+      not_found: "Order is not found"
       update_success: "Update success"
       update_fail: "Update fail"

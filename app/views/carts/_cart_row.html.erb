@@ -18,15 +18,6 @@
       </div>
     </td>
   </div>
-  <td class="col-md-2 form-inline">
-    <%= form_tag(carts_path, method: :patch) do %>
-      <%= number_field_tag(:quantity, order_detail.quantity.to_i, min: 1, max: order_detail.product_quantity, class: "form-control") %>
-      <%= hidden_field_tag(:product_id, order_detail.product.id) %>
-      <%= button_tag(type: "submit", data: {confirm: t("cart.update")}, class: "btn btn-success save") do %>
-        <i class="fa fa-save"></i>
-      <% end %>
-    <% end %>
-  </td>
   <td class="col-md-2" style="text-align: center">
     <strong><%= order_detail.quantity.to_i %></strong>
   </td>
@@ -42,6 +33,15 @@
     <%= link_to carts_path(id: order_detail.product.id), {data: {confirm: t("cart.verify")}, class: "btn btn-danger", method: :delete} do %>
     <span class="glyphicon glyphicon-remove"></span>
     <strong><%= t("cart.remove") %></strong>
+    <% end %>
+  </td>
+  <td class="col-md-2 form-inline">
+    <%= form_tag(carts_path, method: :patch) do %>
+      <%= number_field_tag(:quantity, order_detail.quantity.to_i, min: 1, max: order_detail.product_quantity, class: "form-control") %>
+      <%= hidden_field_tag(:product_id, order_detail.product.id) %>
+      <%= button_tag(type: "submit", data: {confirm: t("cart.update")}, class: "btn btn-success save") do %>
+        <i class="fa fa-save"></i>
+      <% end %>
     <% end %>
   </td>
 </tr>

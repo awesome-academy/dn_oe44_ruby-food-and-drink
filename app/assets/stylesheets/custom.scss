@@ -38,7 +38,7 @@
 }
 /* Product Items*/
 .grid{
-  border: solid $border-color 1px;
+  border: solid $border-color 0.5px;
   padding: 15px;
 }
 .product{
@@ -113,13 +113,15 @@
 #shopping{
   padding-bottom: 100px;
 }
+.container{
+  width: 100%;
+}
 /* Product Detail */
 .item-photo{
   display: flex;
   justify-content: center;
   align-items: center;
-  border-right: 1px
-  solid $logo-color;
+  border-right: 1px solid $logo-color;
   .food{
     width: 100%;
   }
@@ -127,4 +129,21 @@
 .info{
   padding-bottom: 100px;
   margin-top: -28px;
+}
+/* Confirm Order */
+#orders {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#orders td, #orders th {
+  border: 1px solid $border-color;
+  padding: 8px;
+}
+
+#orders th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: $row-color;
+  color: $logo-color;
 }
