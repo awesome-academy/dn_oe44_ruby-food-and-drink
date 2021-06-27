@@ -1,0 +1,25 @@
+<% provide :title, t("order.name") %>
+<% provide :base_title, t("base.title") %>
+<div class="container">
+  <h1 class="text-center"><%= t "order.status" %></h1>
+  <hr>
+  <table id="orders" class="table table-hover">
+      <tr>
+        <th><%= t "order.status" %></th>
+        <th><%= t "order.total" %></th>
+        <th><%= t "order.date" %></th>
+      </tr>
+      <tr>
+        <td><%= @order.status %></td>
+        <td><%= number_to_currency @order.total_price %></td>
+        <td><%= l @order.created_at, format: :short %></td>
+      </tr>
+  </table>
+  <hr>
+  <div class="text-center">
+    <%= link_to root_path, class: "btn btn-primary" do %>
+      <span class="glyphicon glyphicon-shopping-cart"></span>
+      <strong><%= t("cart.continue") %></strong>
+    <% end %>
+  </div>
+</div>

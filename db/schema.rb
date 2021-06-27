@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2021_06_20_141913) do
   end
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "status"
+    t.integer "status", default: 0
     t.float "total"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false

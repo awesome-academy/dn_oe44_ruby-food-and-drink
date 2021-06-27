@@ -82,6 +82,7 @@ en:
     descipt: "Description product"
     detail_info: "Detail"
   order:
+    name: "Order Confirmation"
     your_order: "Your order"
     status: "Order status"
     total: "Total"
@@ -106,3 +107,15 @@ en:
       not_found: "Order is not found"
       update_success: "Update success"
       update_fail: "Update fail"
+    order_confirms:
+      success: "Your order has been confirmed."
+      fail: "Order confirmation failed"
+      expired: "Link has been expired."
+      not_found: "Order not found."
+  mailer:
+    order_infor: "LOVE FOOD RESTAURANT - YOUR ORDER INFORMATION"
+    thanks: "Thank you for choosing our restaurant"
+    click: "Please click the link below to confirm your order."
+    user_name: "Hello %{name}."
+    date: "Order date : %{date}"
+    status: "Status : %{status}"

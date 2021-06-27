@@ -82,6 +82,7 @@ vi:
     descipt: "Mô tả sản phẩm"
     detail_info: "Chi tiết"
   order:
+    name: "Xác nhận đơn hàng"
     your_order: "Đơn hàng của bạn"
     status: "Trạng thái đơn hàng"
     total: "Tổng tiền"
@@ -106,3 +107,15 @@ vi:
       not_found: "Không tìm thấy giỏ hàng"
       update_success: "Cập nhật giỏ hàng thành công"
       update_fail: "Cập nhật giỏ hàng thất bại"
+    order_confirms:
+      success: "Đơn hàng của bạn đã được xác nhận."
+      fail: "Xác nhận đơn hàng thất bại."
+      expired: "Liên kết đã hết hạn."
+      not_found: "Không tìm thấy đơn hàng."
+  mailer:
+    order_infor: "NHÀ HÀNG LOVE FOOD - THÔNG TIN ĐƠN HÀNG CỦA BẠN"
+    thanks: "Cám ơn bạn đã lựa chọn nhà hàng chúng tôi"
+    click: "Vui lòng bấm vào liên kết bên dưới để xác nhận đơn hàng."
+    user_name: "Xin chào %{name}."
+    date: "Ngày đặt hàng : %{date}"
+    status: "Trạng thái đơn hàng: %{status}"
