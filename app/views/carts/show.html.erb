@@ -39,10 +39,17 @@
               <strong><%= t("cart.continue") %></strong>
             <% end %>
           </td>
-          <td class="text-right">
-            <%= link_to "#", class: "btn btn-success" do %>
-              <span class="glyphicon glyphicon-play"></span>
-              <strong><%= t("cart.checkout") %></strong>
+          <td class="text-center">
+            <% if @order_details.size.zero? %>
+              <%= link_to root_path, {data: {confirm: t("cart.empty")}, class: "btn btn-success"} do %>
+                <span class="glyphicon glyphicon-play"></span>
+                <strong><%= t("cart.checkout") %></strong>
+              <% end %>
+            <% else %>
+              <%= link_to new_order_path, class: "btn btn-success" do %>
+                <span class="glyphicon glyphicon-play"></span>
+                <strong><%= t("cart.checkout") %></strong>
+              <% end %>
             <% end %>
           </td>
         </tr>

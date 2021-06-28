@@ -15,6 +15,10 @@ class OrderDetail < ApplicationRecord
 
   before_save :finalize
 
+  def total
+    quantity * current_price
+  end
+
   private
 
   def product_present
@@ -27,5 +31,9 @@ class OrderDetail < ApplicationRecord
     return if order
 
     errors.add(:order, :order_nil)
+  end
+
+  def finalize
+    self[:current_price] = current_price
   end
 end
