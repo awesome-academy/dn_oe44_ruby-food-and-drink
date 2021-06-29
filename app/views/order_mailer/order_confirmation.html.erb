@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #text {
+      color: black;
+      font-size: 150%;
+      font-style: inherit
+    }
+    #tittle {
+      color: black;
+      text-align:center;
+      font-size: 200%;
+      font-style: italic
+    }
+    #mail_order {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #mail_order td, #mail_order th {
+      border: 1px solid black;
+      padding: 8px;
+    }
+
+    #mail_order th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: black;
+      color: white;
+    }
+ </style>
+</head>
+<body>
+  <h2 id="tittle"><%= t "order.your_order" %></h2>
+  <p id="text">
+    <%= t("mailer.user_name", name: @user.name) %>
+  </p>
+  <p id="text">
+    <%= t("mailer.date", date: (l @order.created_at, format: :short)) %>
+  </p>
+  <p id="text">
+    <%= t("mailer.status", status: @order.status) %>
+  </p>
+  <br>
+  <table id="mail_order" >
+    <tr>
+      <th><%= t "cart.product" %></th>
+      <th><%= t "cart.quantity" %></th>
+      <th><%= t "cart.price" %></th>
+      <th><%= t "cart.subtotal" %></th>
+    </tr>
+    <%= render partial: "order_mailer/order_row", collection: @order.order_details, as: :order_detail %>
+    <tr style="font-weight:bold" >
+      <td style="text-align:right" colspan="3" >
+        <%= t "cart.total" %>
+      </td>
+      <td><%= number_to_currency @order.total_price %></td>
+    </tr>
+  </table>
+  <p id="text" style="text-align:center" ><%= t "mailer.thanks" %></p>
+  <h4 style="text-align:center">
+    <%= link_to t("mailer.click"), edit_order_url(id: @order.id) %>
+  </h4>
+</body>
+</html>

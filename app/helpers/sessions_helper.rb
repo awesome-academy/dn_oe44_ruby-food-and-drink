@@ -11,13 +11,17 @@ module SessionsHelper
     current_user.present?
   end
 
+  def current_user? user
+    user == current_user
+  end
+
   def log_out
     session.delete :user_id
     @current_user = nil
   end
 
   def current_cart
-    session[:cart] || Hash.new
+    session[:cart] ||= Hash.new
   end
 
   def total price, quantity

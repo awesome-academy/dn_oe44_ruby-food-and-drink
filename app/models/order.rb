@@ -18,6 +18,14 @@ class Order < ApplicationRecord
     end
   end
 
+  def order_confirm
+    update_columns status: Order.statuses[:confirmed]
+  end
+
+  def confirm_link_has_expired?
+    created_at < Settings.mail.expired.hours.ago
+  end
+
   private
 
   def update_quantity_product
