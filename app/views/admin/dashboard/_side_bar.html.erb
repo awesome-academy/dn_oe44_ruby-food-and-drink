@@ -1,0 +1,19 @@
+<div class="absolute-wrapper"></div>
+<div class="side-menu">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="side-menu-container">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <%= link_to admin_root_path do %>
+            <span class="glyphicon glyphicon-dashboard"></span><%= t("admin.dashboard") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to admin_orders_path do %>
+            <i class="fa fa-shopping-cart"></i> <%= t("admin.order_manage") %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
