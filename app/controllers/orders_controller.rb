@@ -1,8 +1,9 @@
 class OrdersController < ApplicationController
   before_action :logged_in_user
-  before_action :load_order_from_cart, except: [:show, :edit]
-  before_action :find_by_order, only: :show
+  before_action :load_order_from_cart, except: [:show, :edit, :update]
+  before_action :find_by_order, only: [:show, :update]
   before_action :load_order, :check_expiration, only: :edit
+  before_action :check_order, only: :update
 
   def show; end
 
@@ -10,8 +11,10 @@ class OrdersController < ApplicationController
 
   def edit
     if @order.waiting?
-      @order.order_confirm
-      flash[:success] = t "controllers.order_confirms.success"
+      ActiveRecord::Base.transaction do
+        @order.order_confirmed
+        flash[:success] = t "controllers.order_confirms.success"
+      end
     else
       flash[:danger] = t "controllers.order_confirms.fail"
       redirect_to root_path
@@ -26,9 +29,25 @@ class OrdersController < ApplicationController
       session.delete :cart
       redirect_to order_path(@order)
     end
-  rescue ActiveRecord::RecordInvalid
+  rescue StandardError
     flash[:danger] = t "controllers.orders.save_fail"
     render :new
+  end
+
+  def update
+    status = params[:status].to_i
+    if status.eql?(Order.statuses[:waiting])
+      ActiveRecord::Base.transaction do
+        @order.cancel!
+        flash[:success] = t "controllers.carts.cancel_success"
+      end
+    else
+      flash[:danger] = t "controllers.carts.status_error"
+    end
+    redirect_to current_user
+  rescue StandardError
+    flash[:danger] = t "controllers.carts.cancel_fail"
+    redirect_to current_user
   end
 
   private
@@ -88,5 +107,12 @@ class OrdersController < ApplicationController
 
     flash[:danger] = t "controllers.orders.not_found"
     redirect_to root_path
+  end
+
+  def check_order
+    return if @order.waiting? || @order.ordered?
+
+    flash[:danger] = t "controllers.carts.status_error"
+    redirect_to current_user
   end
 end

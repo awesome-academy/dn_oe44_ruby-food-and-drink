@@ -9,10 +9,11 @@ Rails.application.routes.draw do
     resource :carts, except: [:new, :edit]
     resources :users, only: :show
     resources :products, only: :show
-    resources :orders, except: [:index, :update, :destroy]
+    resources :orders, except: [:destroy]
+
     namespace :admin do
       root "dashboard#index"
-      resources :orders, only: :index
+      resources :orders, only: [:index, :update]
     end
   end
 end

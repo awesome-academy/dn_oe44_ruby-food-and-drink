@@ -3,7 +3,6 @@
 <table id="orders" class="table table-hover">
   <thead>
     <tr>
-      <th><%= t "order.id" %></th>
       <th><%= t "order.user_name" %></th>
       <th><%= t "order.status" %></th>
       <th><%= t "order.total" %></th>
@@ -12,7 +11,7 @@
     </tr>
   </thead>
   <tbody id="order_row">
-    <%= render @orders || t("cart.order_details_empty") %>
+    <%= render(partial: "order", collection: @orders) || t("cart.order_details_empty") %>
   </tbody>
 </table>
 <div class="row text-center">

@@ -59,6 +59,9 @@ en:
     role: "Role"
     my_contacts: "My contacts"
     phone: "Phone"
+    my_orders: "My orders"
+    order: "Order"
+    cancel_order: "Are you sure you want to cancel your order?"
   cart:
     name: "Cart"
     order_details_empty: "There's no order detail to be displayed"
@@ -77,6 +80,7 @@ en:
     content: "%{quantity} product"
     update: "Do you want update this product?"
     empty: "No orders to check out"
+    user_name: "User name"
   product:
     name: "%{product}"
     detail: "PRODUCT DETAIL"
@@ -103,6 +107,9 @@ en:
       update_fail: "Update fail"
       update_success: "Update success"
       update_fail: "Update fail"
+      cancel_success: "Cancel order successfully."
+      cancel_fail: "Cancel order failed."
+      status_error: "Status error"
     orders:
       save_success: "Save the orders success"
       save_fail: "Save the orders fail"
@@ -128,3 +135,12 @@ en:
     order_manage: "Order Management"
     welcome: "Welcome to the administrator page"
     dashboard: "Dashboard"
+    order:
+      name: "Order manage"
+      action: "Action"
+      confirm: "Order status : Confirmed"
+      deny: "Order status : Deny"
+      update_fail: "Update status failed"
+      btn_confirm: "Confirm"
+      btn_deny: "Deny"
+      status: "Order status : %{status}"

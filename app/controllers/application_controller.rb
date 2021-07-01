@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper
+  include OrdersHelper
 
   before_action :set_locale
 
