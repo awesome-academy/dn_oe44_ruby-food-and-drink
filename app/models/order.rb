@@ -5,6 +5,8 @@ class Order < ApplicationRecord
   has_many :products, through: :order_details
   enum status: {waiting: 0, ordered: 1, confirmed: 2, deny: 3, cancel: 4}
 
+  scope :newest, ->{order created_at: :desc}
+
   after_save :update_quantity_product, :save_order_details
   before_create :set_total
 

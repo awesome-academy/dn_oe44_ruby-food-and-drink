@@ -27,8 +27,9 @@ en:
     cart: "CART"
     view: "VIEW"
   header:
-    cate: "FOODS"
-    cate: "DRINKS"
+    categories: "Category"
+    cate_food: "Food"
+    cate_drink: "Drink"
     contact: "About Us"
     cart: "Shopping Cart"
     account: "Account"
@@ -82,11 +83,14 @@ en:
     descipt: "Description product"
     detail_info: "Detail"
   order:
+    id: "Order ID"
+    user_name: "User name"
     name: "Order Confirmation"
     your_order: "Your order"
     status: "Order status"
     total: "Total"
     date: "Order date"
+    action: "Action"
     note: "Thank you for choosing our restaurant"
   controllers:
     carts:
@@ -119,3 +123,8 @@ en:
     user_name: "Hello %{name}."
     date: "Order date : %{date}"
     status: "Status : %{status}"
+  admin:
+    name: "Administrator Page"
+    order_manage: "Order Management"
+    welcome: "Welcome to the administrator page"
+    dashboard: "Dashboard"

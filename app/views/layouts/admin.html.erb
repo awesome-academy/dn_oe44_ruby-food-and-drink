@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= full_title (yield :title) %></title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+  <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+</head>
+<body>
+  <%= render "admin/dashboard/header" %>
+  <div class="container">
+    <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>">
+      <%= message %>
+    </div>
+    <% end %>
+    <div class="col-md-3">
+      <%= render "admin/dashboard/side_bar" %>
+    </div>
+    <div class="col-md-9 content">
+      <%= yield %>
+    </div>
+  </div>
+  <%= render "admin/dashboard/footer" %>
+</body>
+</html>

@@ -10,5 +10,9 @@ Rails.application.routes.draw do
     resources :users, only: :show
     resources :products, only: :show
     resources :orders, except: [:index, :update, :destroy]
+    namespace :admin do
+      root "dashboard#index"
+      resources :orders, only: :index
     end
+  end
 end

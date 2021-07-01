@@ -51,7 +51,7 @@
       <th><%= t "cart.price" %></th>
       <th><%= t "cart.subtotal" %></th>
     </tr>
-    <%= render partial: "order_mailer/order_row", collection: @order.order_details, as: :order_detail %>
+    <%= render partial: "order_row", collection: @order.order_details, as: :order_detail %>
     <tr style="font-weight:bold" >
       <td style="text-align:right" colspan="3" >
         <%= t "cart.total" %>

@@ -3,6 +3,8 @@ class User < ApplicationRecord
   has_many :rates, dependent: :destroy
   has_many :orders, dependent: :destroy
 
+  enum role: {normal_user: 0, admin: 1}
+
   before_save :downcase_email
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
@@ -11,9 +13,9 @@ class User < ApplicationRecord
   validates :name, presence: true,
                    length: {maximum: Settings.user.name.max_length}
   validates :email, presence: true,
-                     length: {maximum: Settings.user.email.max_length},
-                     format: {with: VALID_EMAIL_REGEX},
-                     uniqueness: true
+                   length: {maximum: Settings.user.email.max_length},
+                   format: {with: VALID_EMAIL_REGEX},
+                   uniqueness: true
   validates :address, presence: true
   validates :phone, presence: true, format: {with: VALID_PHONE_REGEX}
   validates :password, presence: true,

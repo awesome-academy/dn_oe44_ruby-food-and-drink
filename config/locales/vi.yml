@@ -27,8 +27,9 @@ vi:
     cart: "Thêm vào giỏ"
     view: "Hiển thị thông tin"
   header:
-    cate: "ĐỒ ĂN"
-    cate: "THỨC UỐNG"
+    categories: "Danh mục"
+    cate_food: "Đồ ăn"
+    cate_drink: "Thức uống"
     contact: "Về chúng tôi"
     cart: "Giỏ hàng"
     account: "Tài khoản"
@@ -82,11 +83,14 @@ vi:
     descipt: "Mô tả sản phẩm"
     detail_info: "Chi tiết"
   order:
+    id: "Mã đơn hàng"
+    user_name: "Tên người dùng"
     name: "Xác nhận đơn hàng"
     your_order: "Đơn hàng của bạn"
     status: "Trạng thái đơn hàng"
     total: "Tổng tiền"
     date: "Ngày đặt hàng"
+    action: "Thao tác"
     note: "Cám ơn bạn đã chọn nhà hàng của chúng tôi"
   controllers:
     carts:
@@ -119,3 +123,8 @@ vi:
     user_name: "Xin chào %{name}."
     date: "Ngày đặt hàng : %{date}"
     status: "Trạng thái đơn hàng: %{status}"
+  admin:
+    name: "Trang quản lý"
+    order_manage: "Quản lý đơn hàng"
+    welcome: "Chào mừng bạn đến với trang quản lý"
+    dashboard: "Bảng điều khiển"

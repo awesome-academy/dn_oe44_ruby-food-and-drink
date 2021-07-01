@@ -20,6 +20,22 @@ module SessionsHelper
     @current_user = nil
   end
 
+  def check_logged_in
+    return if logged_in?
+
+    store_location
+    flash[:danger] = t "user.login"
+    redirect_to login_path
+  end
+
+  def user_admin?
+    current_user.admin?
+  end
+
+  def require_admin
+    redirect_to root_path unless user_admin?
+  end
+
   def current_cart
     session[:cart] ||= Hash.new
   end
