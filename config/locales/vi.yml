@@ -59,6 +59,9 @@ vi:
     role: "Vai trò"
     my_contacts: "Liên hệ của tôi"
     phone: "Số điện thoại"
+    my_orders: "Đơn hàng của tôi"
+    order: "Đơn hàng"
+    cancel_order: "Bạn chắc chắn muốn hủy đơn hàng này?"
   cart:
     name: "Giỏ hàng"
     order_details_empty: "Không có đơn hàng nào để hiển thị"
@@ -77,6 +80,7 @@ vi:
     content: "%{quantity} sản phẩm"
     update: "Bạn có muốn cập nhật sản phẩm này?"
     empty: "Không có đơn hàng để thanh toán"
+    user_name: "Tên người dùng"
   product:
     name: "%{product}"
     detail: "CHI TIẾT SẢN PHẨM"
@@ -103,6 +107,9 @@ vi:
       update_fail: "Cập nhật giỏ hàng thất bại"
       update_success: "Cập nhật giỏ hàng thành công"
       update_fail: "Cập nhật giỏ hàng thất bại"
+      cancel_success: "Hủy đơn hàng thành công."
+      cancel_fail: "Hủy đơn hàng thất bại."
+      status_error: "Lỗi trạng thái đơn hàng."
     orders:
       save_success: "Lưu giỏ hàng thành công"
       save_fail: "Lưu giỏ hàng thất bại"
@@ -128,3 +135,12 @@ vi:
     order_manage: "Quản lý đơn hàng"
     welcome: "Chào mừng bạn đến với trang quản lý"
     dashboard: "Bảng điều khiển"
+    order:
+      name: "Quản lý giỏ hàng"
+      action: "Thao tác"
+      confirm: "Trạng thái đơn hàng : Đã xác nhận"
+      deny: "Trạng thái đơn hàng : Từ chối"
+      update_fail: "Cập nhật trạng thái đơn hàng thất bại"
+      btn_confirm: "Xác nhận"
+      btn_deny: "Hủy"
+      status: "Trạng thái đơn hàng : %{status}"

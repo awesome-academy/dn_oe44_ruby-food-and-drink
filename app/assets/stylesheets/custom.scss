@@ -134,6 +134,7 @@
 #orders {
   border-collapse: collapse;
   width: 100%;
+  text-align: center;
 }
 
 #orders td, #orders th {
@@ -146,4 +147,5 @@
   padding-bottom: 12px;
   background-color: $row-color;
   color: $logo-color;
+  text-align: center;
 }

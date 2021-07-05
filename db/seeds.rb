@@ -9,6 +9,16 @@ User.create!(
   password_confirmation: "123456"
 )
 
+User.create!(
+  name: "Huynh Thanh Chuc",
+  email: "thanhchuc2696@gmail.com",
+  address: "Đà Nẵng",
+  phone: "0795712412",
+  role: 0,
+  password: "123456",
+  password_confirmation: "123456"
+)
+
 10.times do |n|
   User.create!(
     name: Faker::Name.name,

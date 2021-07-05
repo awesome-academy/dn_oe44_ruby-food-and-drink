@@ -1,0 +1,16 @@
+<tr>
+  <td><%= order.user_name %></td>
+  <td><%= order.status %></td>
+  <td><%= number_to_currency order.total_price %></td>
+  <td><%= l order.created_at, format: :short %></td>
+  <td>
+    <% if order.waiting? || order.ordered? %>
+      <%= link_to t("admin.order.btn_confirm"), admin_order_path(id: order.id, status: Order.statuses[:confirmed]), method: :patch, data: {confirm: t("admin.order.confirm")}, class: "btn btn-success" %>
+      <%= link_to t("admin.order.btn_deny"), admin_order_path(id: order.id, status: Order.statuses[:denied]), method: :patch, data: {confirm: t("admin.order.deny")}, class: "btn btn-danger" %>
+    <% elsif order.confirmed? %>
+      <%= link_to t("admin.order.btn_deny"), admin_order_path(id: order.id, status: Order.statuses[:denied]), method: :patch, data: {confirm: t("admin.order.deny")}, class: "btn btn-danger" %>
+    <% elsif order.denied? %>
+      <%= link_to t("admin.order.btn_confirm"), admin_order_path(id: order.id, status: Order.statuses[:confirmed]), method: :patch, data: {confirm: t("admin.order.confirm")}, class: "btn btn-success" %>
+    <% end %>
+  </td>
+</tr>

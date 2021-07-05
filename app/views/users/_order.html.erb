@@ -1,0 +1,12 @@
+<tr>
+  <td><%= order.status %></td>
+  <td><%= number_to_currency order.total_price %></td>
+  <td><%= l order.created_at, format: :short %></td>
+  <td>
+    <% if order.waiting? || order.ordered? %>
+      <%= link_to order_path(id: order.id, status: Order.statuses[:canceled]), {data: {confirm: t("user.cancel_order")}, class: "btn btn-danger", method: :patch} do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
+    <% end %>
+  </td>
+</tr>
